@@ -1,0 +1,587 @@
+
+/* Configurações gerais */
+:root {
+    --cor-fundo: #0b1020;
+    --cor-cartao: #111a2d;
+    --cor-texto: #f2f5fb;
+    --cor-texto-secundario: #9aa8bd;
+    --cor-destaque: #8cf0c8;
+    --cor-borda: rgba(255, 255, 255, 0.11);
+
+    --fonte-principal: 'DM Sans', sans-serif;
+    --fonte-titulos: 'Space Grotesk', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: var(--fonte-principal);
+    line-height: 1.65;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(1120px, calc(100% - 48px));
+    margin-inline: auto;
+}
+
+.destaque {
+    color: var(--cor-destaque);
+}
+
+/* Cabeçalho */
+.cabecalho {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background-color: rgba(11, 16, 32, 0.88);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.navegacao {
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.identidade {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    font-family: var(--fonte-titulos);
+    font-weight: 700;
+}
+
+.identidade-iniciais {
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(140, 240, 200, 0.6);
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    color: var(--cor-destaque);
+    font-size: 12px;
+}
+
+.lista-navegacao {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    list-style: none;
+    color: var(--cor-texto-secundario);
+    font-size: 13px;
+}
+
+.lista-navegacao a:hover {
+    color: var(--cor-destaque);
+}
+
+/* Apresentação */
+.apresentacao {
+    min-height: 620px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    gap: 40px;
+    padding-block: 90px;
+}
+
+.identificacao-secao {
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: var(--cor-destaque);
+    margin-bottom: 22px;
+}
+
+.apresentacao h1,
+.titulo-secao h2,
+.conteudo-contato h2 {
+    font-family: var(--fonte-titulos);
+    font-size: clamp(42px, 5.5vw, 68px);
+    line-height: 1.06;
+    letter-spacing: -3px;
+}
+
+.texto-apresentacao {
+    max-width: 550px;
+    color: var(--cor-texto-secundario);
+    font-size: 15px;
+    margin-top: 24px;
+}
+
+.grupo-botoes {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 32px;
+}
+
+.botao {
+    padding: 13px 18px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.botao-principal {
+    background-color: var(--cor-destaque);
+    color: #07130f;
+}
+
+.botao-secundario {
+    border: 1px solid var(--cor-borda);
+}
+
+.resumo-academico {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 48px;
+    color: var(--cor-texto-secundario);
+    font-size: 11px;
+}
+
+.resumo-academico strong {
+    color: var(--cor-texto);
+    font-family: var(--fonte-titulos);
+    font-size: 17px;
+}
+
+.separador-vertical {
+    height: 25px;
+    width: 1px;
+    background-color: var(--cor-borda);
+}
+
+/* Elemento visual */
+.apresentacao-elemento-visual {
+    height: 390px;
+    display: grid;
+    place-items: center;
+}
+
+.cartao-identificacao {
+    width: 270px;
+    height: 330px;
+    border: 1px solid rgba(140, 240, 200, 0.4);
+    border-radius: 18px;
+    background: linear-gradient(145deg, #18243a, #0d1527);
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
+    padding: 23px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transform: rotate(5deg);
+}
+
+.texto-cartao {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--cor-texto-secundario);
+}
+
+.iniciais-destaque {
+    font-family: var(--fonte-titulos);
+    font-size: 105px;
+    font-weight: 700;
+    letter-spacing: -12px;
+    text-align: center;
+}
+
+.rodape-cartao {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: var(--cor-texto-secundario);
+    border-top: 1px solid var(--cor-borda);
+    padding-top: 14px;
+}
+
+/* Seções */
+.secao {
+    padding: 110px 0;
+    border-top: 1px solid var(--cor-borda);
+}
+
+.sobre-mim,
+.experiencia {
+    background-color: #0e1526;
+}
+
+.titulo-secao h2 {
+    font-size: clamp(36px, 4vw, 50px);
+    letter-spacing: -2px;
+}
+
+/* Sobre mim */
+.sobre-mim-conteudo {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 90px;
+}
+
+.apresentacao-pessoal {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+.imagem-perfil {
+    flex: 0 0 180px;
+}
+
+.imagem-perfil img {
+    display: block;
+    width: 180px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid var(--cor-borda);
+    background-color: var(--cor-cartao);
+}
+
+.texto-sobre-mim p {
+    color: var(--cor-texto-secundario);
+    font-size: 13px;
+    margin-bottom: 17px;
+}
+
+.texto-sobre-mim .texto-destaque {
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--cor-texto);
+    font-weight: 500;
+}
+
+.informacoes-pessoais {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 1px solid var(--cor-borda);
+}
+
+.item-informacao {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.rotulo-informacao {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: var(--cor-destaque);
+    font-weight: 700;
+}
+
+.item-informacao strong {
+    font-size: 12px;
+}
+
+.item-informacao small {
+    font-size: 10px;
+    color: var(--cor-texto-secundario);
+}
+
+/* Habilidades */
+.cabecalho-secao {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 45px;
+}
+
+.descricao-secao {
+    max-width: 310px;
+    color: var(--cor-texto-secundario);
+    font-size: 12px;
+}
+
+.lista-habilidades {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.cartao-habilidade {
+    background-color: var(--cor-cartao);
+    border: 1px solid var(--cor-borda);
+    border-radius: 11px;
+    padding: 24px;
+    min-height: 235px;
+}
+
+.numero-habilidade {
+    display: inline-block;
+    font-family: var(--fonte-titulos);
+    font-size: 11px;
+    color: var(--cor-destaque);
+    border: 1px solid rgba(140, 240, 200, 0.35);
+    padding: 5px 8px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.cartao-habilidade h3 {
+    font-family: var(--fonte-titulos);
+    font-size: 17px;
+    margin-bottom: 9px;
+}
+
+.cartao-habilidade p {
+    font-size: 11px;
+    color: var(--cor-texto-secundario);
+}
+
+.lista-tecnologias {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 17px;
+}
+
+.lista-tecnologias span {
+    font-size: 9px;
+    color: #c1ccda;
+    background-color: #202d43;
+    border-radius: 4px;
+    padding: 4px 7px;
+}
+
+/* Experiência e formação */
+.linha-do-tempo {
+    margin-top: 45px;
+    border-left: 1px solid rgba(140, 240, 200, 0.35);
+    margin-left: 7px;
+}
+
+.item-trajetoria {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 35px;
+    padding: 0 0 38px 30px;
+}
+
+.categoria-trajetoria {
+    font-size: 9px;
+    letter-spacing: 1.4px;
+    color: var(--cor-destaque);
+    font-weight: 700;
+}
+
+.descricao-trajetoria h3 {
+    font-family: var(--fonte-titulos);
+    font-size: 18px;
+}
+
+.instituicao-trajetoria {
+    font-size: 11px;
+    color: var(--cor-texto-secundario);
+    margin: 3px 0 10px;
+}
+
+.descricao-trajetoria p:last-child {
+    font-size: 12px;
+    color: var(--cor-texto-secundario);
+    max-width: 650px;
+}
+
+/* Contato */
+.contato {
+    background: linear-gradient(120deg, #122238, #0d1729);
+}
+
+.conteudo-contato {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.conteudo-contato h2 {
+    font-size: clamp(38px, 4.5vw, 58px);
+}
+
+.texto-contato {
+    color: var(--cor-texto-secundario);
+    font-size: 13px;
+    max-width: 420px;
+    margin-top: 22px;
+}
+
+.lista-contatos {
+    border-top: 1px solid var(--cor-borda);
+}
+
+.lista-contatos a {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--cor-borda);
+    font-size: 11px;
+}
+
+.lista-contatos a span {
+    color: var(--cor-texto-secundario);
+}
+
+.lista-contatos a:hover strong {
+    color: var(--cor-destaque);
+}
+
+/* Rodapé */
+.rodape {
+    border-top: 1px solid var(--cor-borda);
+    padding: 25px 0;
+}
+
+.conteudo-rodape {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.conteudo-rodape p,
+.voltar-inicio {
+    font-size: 10px;
+    color: var(--cor-texto-secundario);
+}
+
+/* Responsividade */
+@media (max-width: 800px) {
+
+    .apresentacao {
+        grid-template-columns: 1fr;
+        padding-block: 75px;
+        gap: 25px;
+    }
+
+    .sobre-mim-conteudo {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .lista-habilidades {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .conteudo-contato {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .cabecalho-secao {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 560px) {
+
+    .container {
+        width: min(100% - 36px, 1120px);
+    }
+
+    .navegacao {
+        height: 68px;
+    }
+
+    .lista-navegacao {
+        gap: 12px;
+        font-size: 10px;
+    }
+
+    .apresentacao {
+        min-height: auto;
+        padding-block: 65px 55px;
+    }
+
+    .apresentacao h1 {
+        font-size: 46px;
+        letter-spacing: -2.5px;
+    }
+
+    .texto-apresentacao {
+        font-size: 13px;
+    }
+
+    .apresentacao-elemento-visual {
+        height: 310px;
+    }
+
+    .cartao-identificacao {
+        width: 225px;
+        height: 275px;
+    }
+
+    .iniciais-destaque {
+        font-size: 88px;
+    }
+
+    .secao {
+        padding: 75px 0;
+    }
+
+    .titulo-secao h2 {
+        font-size: 39px;
+    }
+
+    .apresentacao-pessoal {
+        flex-direction: column;
+    }
+
+    .imagem-perfil img {
+        width: 150px;
+        height: 180px;
+    }
+
+    .lista-habilidades {
+        grid-template-columns: 1fr;
+    }
+
+    .cartao-habilidade {
+        min-height: 0;
+    }
+
+    .item-trajetoria {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding-left: 23px;
+    }
+
+    .lista-contatos a {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .conteudo-rodape {
+        flex-wrap: wrap;
+    }
+
+    .conteudo-rodape p {
+        order: 3;
+        width: 100%;
+    }
+}
